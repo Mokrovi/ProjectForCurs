@@ -1,0 +1,60 @@
+﻿<Window x:Class="ProjectForCurs.View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <Grid Background="{StaticResource Black}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.8*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Viewbox Grid.Column="1" Grid.Row="2">
+            <TextBlock Margin="1" Foreground="White" >
+                Логин
+            </TextBlock>
+        </Viewbox>
+        
+        <Viewbox Grid.Column="1" Grid.Row="3">
+            <TextBox Width="200"
+                     Text="{Binding Path=Email}"/>
+        </Viewbox>
+        
+        <Viewbox Grid.Column="1" Grid.Row="4">
+            <TextBlock Margin="1" Foreground="White" >
+                Пароль
+            </TextBlock>
+        </Viewbox>
+        
+        <Viewbox Grid.Column="1" Grid.Row="5">
+            <TextBox  Width="200" 
+                Text="{Binding Path=Password}"/>
+        </Viewbox>
+        
+        <Viewbox Grid.Column="1" Grid.Row="7">
+            <Button Style="{StaticResource WindowBtn}"  
+                    Width="90"
+                    Command="{Binding LoginCommand}"
+                    CommandParameter="{Binding Path=Password, ElementName=passwordBox}">
+             
+                <TextBlock Margin="1" Foreground="Black">
+                    Войти
+                </TextBlock>
+            </Button>
+        </Viewbox>
+    </Grid>
+</Window>
